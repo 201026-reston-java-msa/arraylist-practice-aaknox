@@ -22,21 +22,23 @@ public class MyArrayList<T> {
 	// add value to end of arraylist
 	public void add(T val) {
 		// if current arraylist size has reached max capacity
+		
 		if (currentCapacity == elements.length) {
 			// call ensureCapacity method here
 			ensureCapacity();
 		} else {
 			// else add value to arraylist
-			elements[currentCapacity++] = val;
+			elements[currentCapacity] = val;
+			currentCapacity++;
 		}
 	}
 
 	public void set(int index, int val) {
 
 		// if index is outside of current size of array
-		if (index > currentCapacity) {
+		if (index > this.elements.length) {
 			//if so throw exception
-			throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + index);
+			throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + this.elements.length);
 		} else {
 			// else replace original value at index with new value
 			elements[index] = val;
@@ -46,14 +48,15 @@ public class MyArrayList<T> {
 	@SuppressWarnings("unchecked")
 	public void remove(int index) {
 		// check if arraylist size is greater than zero
-		if (currentCapacity >= 0) {
+		if (this.elements.length >= 0) {
 			// remove value at index
-			T originalValue = (T) elements[index];
+			T originalValue = (T) this.elements[index];
 			originalValue = null;
-			elements[--currentCapacity] = originalValue;
+			this.elements[index] = originalValue;
+			currentCapacity--;
 		} else {
 			// else throw exception
-			throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + index);
+			throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + this.elements.length);
 		}
 	}
 
