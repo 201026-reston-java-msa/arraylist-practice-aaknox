@@ -11,7 +11,7 @@ public class Driver {
 
 	public static void main(String[] args) {
 		ArrayList<Integer> reglist = new ArrayList<>();
-		MyArrayList mylist = new MyArrayList();
+		MyArrayList<Integer> mylist = new MyArrayList<Integer>();
 
 		Random r = new Random(System.currentTimeMillis());
 		for(int i = 0; i < AMOUNT; i++) {
