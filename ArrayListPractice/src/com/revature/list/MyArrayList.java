@@ -1,30 +1,30 @@
 package com.revature.list;
 
-public class MyArrayList {
+import java.util.ArrayList;
+import java.util.List;
 
+public class MyArrayList {
+	private List<Integer> arr = new ArrayList<>();
+	
 	public void add(int val) {
-		// TODO Auto-generated method stub
-		
+		this.arr.add(val);
 	}
 
 	public void set(int index, int val) {
-		// TODO Auto-generated method stub
-		
+		this.arr.set(index, val);
 	}
 
 	public void remove(int index) {
-		// TODO Auto-generated method stub
-		
+		this.arr.remove(index);
 	}
 
 	public int get(int index) {
-		// TODO Auto-generated method stub
-		return 0;
+		int val = this.arr.get(index);
+		return val;
 	}
 
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
-		return null;
+		return "MyArrayList [arr=" + arr + "]";
 	}
 }
